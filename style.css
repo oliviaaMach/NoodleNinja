@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #0e0e0e;
+    --white: #f3f3f3;
+    --primary: #23456f;
+    --secondary: #b8d8f7;
+    --brown: #D1B586;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--white);
+}
+
+.wrapper {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 65vmin;
+    height: 70vmin;
+    background-color: var(--primary);
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px var(--black);
+}
+
+.gameDetails {
+    display: flex;
+    justify-content: space-between;
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 20px;
+}
+
+.playBoard {
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary);
+}
+
+.controlBtns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    width: 8em;
+    height: 3em;
+    margin: 1em 1em;
+    background-color: var(--brown);
+    color: var(--black);
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px var(--black);
+}
+
+#joinID {
+    height: 3em;
+    width: 70%;
+}
