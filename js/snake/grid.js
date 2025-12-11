@@ -8,6 +8,6 @@ export function playBoard() {
         board.appendChild(cell);
         cells.push(cell);
     }
+    return cells;
 }
 
-playBoard();

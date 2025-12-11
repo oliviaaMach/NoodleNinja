@@ -27,7 +27,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     width: 65vmin;
-    height: 66.8vmin;
+    height: 66.9vmin;
     background-color: var(--primary);
     border: 2px solid var(--black);
     border-radius: 5px;
@@ -46,7 +46,8 @@ body {
 .playBoard {
     aspect-ratio: 1 / 1;
     display: grid;
-    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(30, 1fr);
     background-color: var(--secondary);
 }
 
