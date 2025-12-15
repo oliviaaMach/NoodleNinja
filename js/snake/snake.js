@@ -41,7 +41,7 @@ export class Snake {
         return this.segments[0];
     }
 
-    // Selfcollision
+    // Selfcollition
     selfCollition() {
         const head = this.getHead();
         for(let i = 1; i < this.segments.length; i++) {

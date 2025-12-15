@@ -27,7 +27,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     width: 65vmin;
-    height: 66.9vmin;
+    height: 73vmin;
     background-color: var(--primary);
     border: 2px solid var(--black);
     border-radius: 5px;

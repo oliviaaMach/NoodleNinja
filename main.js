@@ -2,6 +2,7 @@ import { playBoard } from "./js/snake/grid.js";
 import { Snake } from "./js/snake/snake.js";
 import { Food } from "./js/snake/food.js";
 import { Renderer } from "./js/engine/renderer.js";
+import { gameLoop } from "./js/engine/loop.js";
 
 
 const cells = playBoard();
@@ -14,7 +15,7 @@ const food = new Food(gridSize);
 const renderer = new Renderer(cells, gridSize);
 
 renderer.clear();
-renderer.drawSnake(snake.getSegments());
+// renderer.drawSnake(snake.getSegments());
 renderer.drawFood(food.position);
 
 
@@ -22,8 +23,8 @@ renderer.drawFood(food.position);
 snake.move();
 console.log(snake.getSegments());
 
-snake.grow();
-food.reposition(snake.getSegments());
+// snake.grow();
+// food.reposition(snake.getSegments());
 
 // keydown
 document.addEventListener('keydown', (e) => {
@@ -31,4 +32,7 @@ document.addEventListener('keydown', (e) => {
     if(e.key === 'ArrowDown') snake.setDirection({x: 0, y: 1});
     if(e.key === 'ArrowLeft') snake.setDirection({x: -1, y: 0});
     if(e.key === 'ArrowRight') snake.setDirection({x: 1, y: 0});
-})
+});
+
+// Staring game-loop
+const gameInterval = gameLoop(snake, food, renderer, gridSize, 150);
