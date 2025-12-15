@@ -20,7 +20,5 @@ export class Food {
             newPosition = this.getRandomPosition();
         } while (snakeSegments.some(seg => seg.x === newPosition.x && seg.y === newPosition.y));
             this.position = newPosition;
-    }
-
-    
+    }   
 }

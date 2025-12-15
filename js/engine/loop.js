@@ -12,14 +12,13 @@ export function gameLoop (snake, food, renderer, gridSize, gameSpeed = 150) {
         // Checking wallcollition
         const head = snake.getHead();
         if (head.x < 0 || head.x >= gridSize || head.y < 0 || head.y >= gridSize) {
-            alert("Game Over!");
             clearInterval(gameInterval);
             return;
         }
 
         // Checking selfcollition
         if (snake.selfCollition()) {
-            alert("Game Over!");
+
             clearInterval(gameInterval);
             return;
         }
