@@ -13,8 +13,8 @@
 
     <div class="wrapper">
         <div class="gameDetails">
-            <span class="score">Score: 10</span>
-            <span class="highScore:">High Score: 10</span>
+            <p>Score: <span class="score">0</span></p>
+            <p>Highscore: <span class="highScore">0</span></p>
         </div>
         <div class="playBoard">
 
@@ -22,6 +22,7 @@
     </div>
     <div class="controlBtns">
         <button class="btn startBtn">Start Game</button>
+        <button class="btn pauseBtn">Pause Game</button>
         <button class="btn hostBtn">Host Game</button>
         <button class="btn joinBtn">Join Game</button>
         <input type="text" id="joinID" placeholder="Enter session ID to join game">
@@ -30,6 +31,8 @@
     <div id="gameOverlay">
         <div class="overlayContent">
             <h2>Game Over</h2>
+            <p>Score: <span class="finalScore"></span></p>
+            <p>Highscore: <span class="finalHighScore"></span></p>
             <button class="btn restartBtn">Restart Game</button>
         </div>
     </div>

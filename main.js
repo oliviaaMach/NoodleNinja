@@ -1,8 +1,7 @@
 import { playBoard } from "./js/snake/grid.js";
 import { Renderer } from "./js/engine/renderer.js";
-import  { startGame, restartGame, handleGameOver, setDirection } from "./js/engine/game.js";
+import  { getGameState, startGame, restartGame, handleGameOver, setDirection, pauseGame, resumeGame } from "./js/engine/game.js";
 import { buttons } from "./js/engine/buttons.js"
-
 
 
 const cells = playBoard();
@@ -18,7 +17,14 @@ document.addEventListener('keydown', (e) => {
     if(e.key === 'ArrowRight') setDirection({x: 1, y: 0});
 });
 
-buttons(startGame, restartGame, handleGameOver, renderer, gridSize);
+buttons(
+    startGame, 
+    restartGame, 
+    pauseGame, 
+    resumeGame,  
+    renderer, 
+    gridSize
+);
 
 const overlay = document.getElementById('gameOverlay');
 const restartBtn = document.querySelector('.restartBtn');

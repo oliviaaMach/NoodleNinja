@@ -12,6 +12,12 @@
     --brown: #D1B586;
 }
 
+/* TYPO START */
+    p, h2 {
+        color: var(--white);
+    }
+/* TYPO END */
+
 body {
     display: flex;
     flex-direction: column;
@@ -101,5 +107,5 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 9999;
 }

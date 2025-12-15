@@ -1,4 +1,6 @@
-export function gameLoop (snake, food, renderer, gridSize, handleGameOver, gameSpeed = 150) {
+import { increaseScore } from "./score.js";
+
+export function gameLoop (snake, food, renderer, gridSize, handleGameOver, gameSpeed = 150, onScore) {
     const gameInterval = setInterval(() => {
         console.log('tick');
         snake.move();
@@ -9,6 +11,7 @@ export function gameLoop (snake, food, renderer, gridSize, handleGameOver, gameS
         if (snake.getHead().x === food.position.x && snake.getHead().y === food.position.y) {
             snake.grow();
             food.reposition(snake.getSegments());
+            increaseScore();
         }
 
         // Checking wallcollition
