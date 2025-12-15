@@ -1,14 +1,14 @@
 import { playBoard } from "./js/snake/grid.js";
 import { Renderer } from "./js/engine/renderer.js";
-import  { startGame, handleGameOver, setDirection } from "./js/engine/game.js";
+import  { startGame, restartGame, handleGameOver, setDirection } from "./js/engine/game.js";
+import { buttons } from "./js/engine/buttons.js"
 
 
 
 const cells = playBoard();
 const gridSize = 30;
-const renderer = new Renderer(cells, gridSize);
-
-startGame(renderer, gridSize);
+const board = document.querySelector('.playBoard');
+const renderer = new Renderer(cells, gridSize, board);
 
 // keydown
 document.addEventListener('keydown', (e) => {
@@ -17,3 +17,7 @@ document.addEventListener('keydown', (e) => {
     if(e.key === 'ArrowLeft') setDirection({x: -1, y: 0});
     if(e.key === 'ArrowRight') setDirection({x: 1, y: 0});
 });
+
+buttons(startGame, restartGame, handleGameOver, renderer, gridSize);
+
+

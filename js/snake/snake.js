@@ -51,6 +51,14 @@ export class Snake {
         return false;
     }
 
+    checkCollision(gridSize) {
+        const head = this.getHead();
+        if (head.x < 0 || head.y < 0 || head.x >= gridSize || head.y >= gridSize){
+            return true;
+        }
+        return this.selfCollition();
+    }
+
     // Returnerar alla segments (read-only)
     getSegments() {
         return [...this.segments];

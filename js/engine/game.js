@@ -5,31 +5,38 @@ import { gameLoop } from "./loop.js";
 let gameState= "idle";
 let gameInterval = null;
 let snake = null;
+let food = null;
 
 
 export function startGame(renderer, gridSize) {
     if (gameState === "running") return;
 
     snake = new Snake(14, 14);
-    const food = new Food(gridSize);
+    food = new Food(gridSize);
 
     renderer.clear();
     renderer.drawFood(food.position);
 
     gameState = "running";
     // Staring game-loop
-    gameInterval = gameLoop(snake, food, renderer, gridSize, 150);
+    gameInterval = gameLoop(snake, food, renderer, gridSize, handleGameOver, 150);
 }
 
 export function handleGameOver() {
-    gameState = "gameover";
+    gameState = 'gameover';
     clearInterval(gameInterval);
-    alert("Game Over")
+    alert('Game Over');
 }
 
 export function setDirection(direction) {
     if (snake) {
         snake.setDirection(direction);
     }
+}
+
+export function restartGame (renderer, gridSize) {
+    if(gameInterval) clearInterval(gameInterval);
+        gameState = 'idle';
+        startGame(renderer, gridSize);
 }
 
