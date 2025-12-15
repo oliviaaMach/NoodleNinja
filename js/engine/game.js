@@ -25,7 +25,10 @@ export function startGame(renderer, gridSize) {
 export function handleGameOver() {
     gameState = 'gameover';
     clearInterval(gameInterval);
-    alert('Game Over');
+    
+    // Show overlay
+    const overlay = document.getElementById('gameOverlay');
+    overlay.style.display = 'flex';
 }
 
 export function setDirection(direction) {

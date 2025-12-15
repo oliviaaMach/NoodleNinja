@@ -20,4 +20,11 @@ document.addEventListener('keydown', (e) => {
 
 buttons(startGame, restartGame, handleGameOver, renderer, gridSize);
 
+const overlay = document.getElementById('gameOverlay');
+const restartBtn = document.querySelector('.restartBtn');
+    restartBtn.addEventListener('click', () => {
+        overlay.style.display = 'none';
+        restartGame(renderer, gridSize);
+    })
+
 
