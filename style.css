@@ -9,7 +9,7 @@
     --white: #f3f3f3;
     --primary: #23456f;
     --secondary: #b8d8f7;
-    --brown: #D1B586;
+    --noodle: #f5d38c;
 }
 
 /* TYPO START */
@@ -54,11 +54,13 @@ body {
     display: grid;
     grid-template-columns: repeat(30, 1fr);
     grid-template-rows: repeat(30, 1fr);
-    background-color: var(--secondary);
+    background-color: var(--primary);
 }
 
 .cell {
-    border: 1px solid var(--brown);
+    border: 1px solid var(--black);
+    width: 100%; 
+    height: 100%; 
 }
 
 .controlBtns {
@@ -71,7 +73,7 @@ body {
     width: 8em;
     height: 3em;
     margin: 1em 1em;
-    background-color: var(--brown);
+    background-color: var(--noodle);
     color: var(--black);
     font-weight: 600;
     border-radius: 10px;
@@ -83,17 +85,6 @@ body {
     width: 70%;
 }
 
-/* SNAKE AND FOOD */
-
-.snake {
-    background-color: red;
-    border-radius: 50%;
-}
-
-.food {
-    background-color: green;
-    border-radius: 50%;
-}
 
 
 /* Overlay */

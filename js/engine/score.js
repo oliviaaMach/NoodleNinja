@@ -24,16 +24,16 @@ export function updateScoreUI() {
     const highScoreEl = document.querySelector('.highScore');
 
     if(scoreEl) {
-        scoreEl.textContent = score;
+        scoreEl.textContent = `${score}`;
     }
     if(highScoreEl) {
-        highScoreEl.textContent = highScore;
+        highScoreEl.textContent = `${highScore}`;
     }
 }
 
 export function updateOverlayUI() {
-    document.querySelector('.finalScore').textContent = score;
-    document.querySelector('.finalHighScore').textContent = highScore;
+    document.querySelector('.finalScore').textContent = `${score}`;
+    document.querySelector('.finalHighScore').textContent = `${highScore}`;
 }
 
 updateScoreUI()

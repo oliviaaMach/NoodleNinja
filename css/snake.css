@@ -1,0 +1,25 @@
+/* SNAKE AND FOOD */
+
+.snake {
+    background: linear-gradient(45deg, #f5d38c, #e0b76b);
+    border: 1px solid #e0b76b;
+    border-radius: 50%;
+    margin: auto;
+    height: 60%;
+    width: 60%;
+}
+
+
+.snake.head {
+    animation: none;
+    background: #6b4c1a; 
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.food {
+    background-color: green;
+    border-radius: 50%;
+}
