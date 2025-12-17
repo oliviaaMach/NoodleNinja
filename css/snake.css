@@ -12,7 +12,7 @@
 
 .snake.head {
     animation: none;
-    background: #6b4c1a; 
+    background: var(--snake); 
     width: 80%;
     height: 80%;
     margin: auto;
@@ -20,6 +20,6 @@
 }
 
 .food {
-    background-color: green;
+    background-color: var(--secondary);
     border-radius: 50%;
 }
