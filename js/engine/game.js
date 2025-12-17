@@ -12,24 +12,28 @@ export function getGameState() {
     return gameState;
 }
 
-export function startGame(renderer, gridSize) {
+export function startGame(renderer, gridWidth, gridHeight) {
     if (gameState === "running") return;
 
     resetScore();
 
-    snake = new Snake(14, 14);
-    food = new Food(gridSize);
+    // start snake near the center
+    const startX = Math.floor(gridWidth / 2);
+    const startY = Math.floor(gridHeight / 2);
+    snake = new Snake(startX, startY);
+    food = new Food(gridWidth, gridHeight);
 
     renderer.clear();
     renderer.drawFood(food.position);
 
     gameState = "running";
-    // Staring game-loop
+    // Starting game-loop
     gameInterval = gameLoop(
         snake, 
         food, 
         renderer, 
-        gridSize, 
+        gridWidth, 
+        gridHeight,
         handleGameOver, 
         150
     );
@@ -42,7 +46,7 @@ export function pauseGame() {
     gameState = 'paused';
 }
 
-export function resumeGame(renderer, gridSize) {
+export function resumeGame(renderer, gridWidth, gridHeight) {
     if(gameState !== 'paused') return;
 
     gameState = 'running';
@@ -50,7 +54,8 @@ export function resumeGame(renderer, gridSize) {
         snake, 
         food, 
         renderer, 
-        gridSize, 
+        gridWidth, 
+        gridHeight,
         handleGameOver, 
         150
     );
@@ -73,9 +78,9 @@ export function setDirection(direction) {
     }
 }
 
-export function restartGame (renderer, gridSize) {
+export function restartGame (renderer, gridWidth, gridHeight) {
     if(gameInterval) clearInterval(gameInterval);
         gameState = 'idle';
-        startGame(renderer, gridSize);
+        startGame(renderer, gridWidth, gridHeight);
 }
 

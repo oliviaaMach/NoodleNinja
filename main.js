@@ -4,10 +4,12 @@ import  { getGameState, startGame, restartGame, handleGameOver, setDirection, pa
 import { buttons } from "./js/engine/buttons.js"
 
 
-const cells = playBoard();
-const gridSize = 30;
+// set grid width and height (columns x rows)
+const gridWidth = 35;
+const gridHeight = 22;
+const cells = playBoard(gridWidth, gridHeight);
 const board = document.querySelector('.playBoard');
-const renderer = new Renderer(cells, gridSize, board);
+const renderer = new Renderer(cells, gridWidth, board);
 
 // keydown
 document.addEventListener('keydown', (e) => {
@@ -23,14 +25,15 @@ buttons(
     pauseGame, 
     resumeGame,  
     renderer, 
-    gridSize
+    gridWidth,
+    gridHeight
 );
 
 const overlay = document.getElementById('gameOverlay');
 const restartBtn = document.querySelector('.restartBtn');
     restartBtn.addEventListener('click', () => {
         overlay.style.display = 'none';
-        restartGame(renderer, gridSize);
+        restartGame(renderer, gridWidth, gridHeight);
     })
 
 

@@ -1,6 +1,6 @@
 import { getGameState } from "./game.js";
 
-export function buttons (startGame, restartGame, pauseGame, resumeGame, renderer, gridSize) {
+export function buttons (startGame, restartGame, pauseGame, resumeGame, renderer, gridWidth, gridHeight) {
     const startBtn = document.querySelector('.startBtn');
     const pauseBtn = document.querySelector('.pauseBtn');
 
@@ -8,11 +8,11 @@ export function buttons (startGame, restartGame, pauseGame, resumeGame, renderer
 
     startBtn.addEventListener('click', () => {
             if (getGameState() !== 'running') {
-                startGame(renderer, gridSize);
+                startGame(renderer, gridWidth, gridHeight);
                 startBtn.textContent = 'Restart Game';
                 hasStarted = true;
             } else {
-                restartGame(renderer, gridSize);
+                restartGame(renderer, gridWidth, gridHeight);
             };
     });
 
@@ -22,8 +22,8 @@ export function buttons (startGame, restartGame, pauseGame, resumeGame, renderer
         if(gameState === 'running') {
             pauseGame();
          pauseBtn.textContent = 'Resume Game';
-         } else if(gameState === 'paused') {
-            resumeGame(renderer, gridSize);
+        } else if(gameState === 'paused') {
+            resumeGame(renderer, gridWidth, gridHeight);
             pauseBtn.textContent = 'Pause Game';
         }
     })

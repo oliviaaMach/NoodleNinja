@@ -1,9 +1,7 @@
 import { increaseScore } from "./score.js";
 
-export function gameLoop (snake, food, renderer, gridSize, handleGameOver, gameSpeed = 150, onScore) {
-    
+export function gameLoop (snake, food, renderer, gridWidth, gridHeight, handleGameOver, gameSpeed = 150, onScore) {
     const gameInterval = setInterval(() => {
-        console.log('tick');
         snake.move();
         const head = snake.getHead();
 
@@ -14,8 +12,8 @@ export function gameLoop (snake, food, renderer, gridSize, handleGameOver, gameS
             increaseScore();
         }
 
-        // Checking wallcollition
-        if (snake.checkCollision(gridSize)) {
+        // Checking wall collision
+        if (snake.checkCollision(gridWidth, gridHeight)) {
             clearInterval(gameInterval);
             handleGameOver();
             return;
@@ -24,9 +22,7 @@ export function gameLoop (snake, food, renderer, gridSize, handleGameOver, gameS
         renderer.clear();
         renderer.drawSnake(snake.getSegments());
         renderer.drawFood(food.position);
-        }, gameSpeed);
+    }, gameSpeed);
 
-        
-
-        return gameInterval;
+    return gameInterval;
 }

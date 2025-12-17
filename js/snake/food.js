@@ -1,14 +1,15 @@
 export class Food {
-    constructor(gridSize) {
-        this.gridSize = gridSize;
+    constructor(gridWidth, gridHeight) {
+        this.gridWidth = gridWidth;
+        this.gridHeight = gridHeight;
         this.position = this.getRandomPosition();
     }
 
     // Get randomized position in playboard 
     getRandomPosition() {
         return {
-            x: Math.floor(Math.random() * this.gridSize),
-            y: Math.floor(Math.random() * this.gridSize)
+            x: Math.floor(Math.random() * this.gridWidth),
+            y: Math.floor(Math.random() * this.gridHeight)
         };
     }
     

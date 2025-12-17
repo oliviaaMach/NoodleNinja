@@ -1,12 +1,12 @@
 export class Renderer {
-    constructor(cells, gridSize, board) {
+    constructor(cells, gridWidth, board) {
         this.cells = cells;
-        this.gridSize = gridSize;
+        this.gridWidth = gridWidth;
         this.board = board;
     }
 
     index(x, y) {
-        return y * this.gridSize + x;
+        return y * this.gridWidth + x;
     }
 
     clear() {

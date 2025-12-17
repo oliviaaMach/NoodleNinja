@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asimovian&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./css/snake.css">
     <link rel="stylesheet" href="./css/media.css" />
@@ -11,17 +16,10 @@
 </head>
 <body>
 
-    <h1>Noodle Ninja</h1>
+    <h1>NOODLE NINJA</h1>
 
-    <div class="wrapper">
-        <div class="gameDetails">
-            <p>Score: <span class="score">0</span></p>
-            <p>Highscore: <span class="highScore">0</span></p>
-        </div>
-        <div class="playBoard">
+<div class="container">
 
-        </div>
-    </div>
     <div class="controlBtns">
         <button class="btn startBtn">Start Game</button>
         <button class="btn pauseBtn">Pause Game</button>
@@ -30,11 +28,23 @@
         <input type="text" id="joinID" placeholder="Enter session ID to join game">
     </div>
 
+    <div class="wrapper">
+        <div class="playBoard">
+        </div>
+    </div>
+
+    <div class="gameDetails">
+        <p>SCORE: <span class="score">0</span></p>
+        <p>HIGHSCORE: <span class="highScore">0</span></p>
+    </div>
+
+</div>
+
     <div id="gameOverlay">
         <div class="overlayContent">
             <h2>Game Over</h2>
-            <p>Score: <span class="finalScore"></span></p>
-            <p>Highscore: <span class="finalHighScore"></span></p>
+            <p>SCORE: <span class="finalScore"></span></p>
+            <p>HIGHSCORE: <span class="finalHighScore"></span></p>
             <button class="btn restartBtn">Restart Game</button>
         </div>
     </div>
