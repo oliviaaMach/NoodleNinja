@@ -9,7 +9,7 @@ export function buttons (startGame, restartGame, pauseGame, resumeGame, renderer
     startBtn.addEventListener('click', () => {
             if (getGameState() !== 'running') {
                 startGame(renderer, gridWidth, gridHeight);
-                startBtn.textContent = 'Restart Game';
+                startBtn.textContent = 'RESTART GAME';
                 hasStarted = true;
             } else {
                 restartGame(renderer, gridWidth, gridHeight);
@@ -21,10 +21,10 @@ export function buttons (startGame, restartGame, pauseGame, resumeGame, renderer
 
         if(gameState === 'running') {
             pauseGame();
-         pauseBtn.textContent = 'Resume Game';
+         pauseBtn.textContent = 'RESUME GAME';
         } else if(gameState === 'paused') {
             resumeGame(renderer, gridWidth, gridHeight);
-            pauseBtn.textContent = 'Pause Game';
+            pauseBtn.textContent = 'PAUSE GAME';
         }
     })
 

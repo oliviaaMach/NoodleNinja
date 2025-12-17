@@ -20,6 +20,29 @@
 }
 
 .food {
-    background-color: var(--secondary);
-    border-radius: 50%;
+    /* generic food cell styling; the actual image is chosen by data-sprite */
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* sprite-specific backgrounds (add more as needed) */
+[data-sprite="noodleBowl"] {
+    background-image: url('../assets/imgs/noodleBowl.png');
+}
+
+[data-sprite="egg"] {
+    background-image: url('../assets/imgs/egg.png');
+}
+
+[data-sprite="chili"] {
+    background-image: url('../assets/imgs/chili.png');
+}
+
+[data-sprite="tempura"] {
+    background-image: url('../assets/imgs/tempura.png');
+}
+
+[data-sprite="pakChoi"] {
+    background-image: url('../assets/imgs/pakChoi.png');
 }

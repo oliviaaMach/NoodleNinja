@@ -21,8 +21,15 @@ export function startGame(renderer, gridWidth, gridHeight) {
     const startX = Math.floor(gridWidth / 2);
     const startY = Math.floor(gridHeight / 2);
     snake = new Snake(startX, startY);
-    food = new Food(gridWidth, gridHeight);
-
+    // Provide an array of sprite paths for the Food to choose from
+    const foodSprites = [
+        'assets/imgs/noodleBowl.png',
+        'assets/imgs/egg.png',
+        'assets/imgs/tempura.png',
+        'assets/imgs/pakChoi.png',
+        'assets/imgs/chili.png'
+    ];
+    food = new Food(gridWidth, gridHeight, foodSprites);
     renderer.clear();
     renderer.drawFood(food.position);
 
