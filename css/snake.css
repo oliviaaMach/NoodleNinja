@@ -1,32 +1,29 @@
 /* SNAKE AND FOOD */
 
 .snake {
-    background: linear-gradient(45deg, #f5d38c, #e0b76b);
+    background: linear-gradient(45deg, #f5d38c, hsl(39, 65%, 65%));
     border: 1px solid #e0b76b;
-    border-radius: 50%;
+    border-radius: 60%;
     margin: auto;
     height: 60%;
     width: 60%;
 }
 
-
 .snake.head {
-    animation: none;
-    background: var(--snake); 
+    background-color: var(--snake);
+    border-radius: 50%;
     width: 80%;
     height: 80%;
-    margin: auto;
-    border-radius: 50%;
 }
 
+
+
 .food {
-    /* generic food cell styling; the actual image is chosen by data-sprite */
-    background-size: 120%;
+    background-size: 150%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-/* sprite-specific backgrounds (add more as needed) */
 [data-sprite="noodleBowl"] {
     background-image: url('../assets/imgs/noodleBowl.png');
 }

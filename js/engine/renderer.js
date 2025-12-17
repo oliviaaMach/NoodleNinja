@@ -20,20 +20,22 @@ export class Renderer {
     }
 
     drawSnake(segments) {
+        // Clear previous snake classes for safety
+        this.cells.forEach(c => c.classList.remove('snake', 'head'));
+
         segments.forEach((seg, i) => {
-        const idx = this.index(seg.x, seg.y);
-        const cell = this.cells[idx];
+            const idx = this.index(seg.x, seg.y);
+            const cell = this.cells[idx];
+            if (!cell) return;
 
-        cell.classList.remove('snake', 'head');
+            // Mark as a snake segment
+            cell.classList.add('snake');
 
-        cell.classList.add('snake');
-
-        if (i === 0) {
-            cell.classList.add('head');
-            return;
-        }
-
-    });
+            // Mark head so it can be styled larger than body
+            if (i === 0) {
+                cell.classList.add('head');
+            }
+        });
 }
 
     drawFood(position) {
