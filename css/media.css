@@ -1,0 +1,91 @@
+@media (max-width: 768px) {
+  :root {
+    /* optional mobile-friendly defaults (can be overridden by JS) */
+    --cell-size: 20px;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  /* Single-column layout */
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0.5em;
+    width: 98%;
+    max-width: 600px;
+    padding: 0.5em;
+  }
+
+  .chatContainer {
+    display: none !important;
+  }
+
+  .controlBtns {
+    order: -1; /* move controls above the board */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+    justify-content: center;
+    padding: 0.3em 0;
+  }
+
+  .btn {
+    width: 7.5em;
+    height: 2.4em;
+    margin: 0.3em;
+    font-size: 0.95em;
+  }
+  
+  .wrapper {
+    width: 100%;
+    max-width: 95vw;
+    padding: 0.4em;
+    margin-top: 0.3em;
+  }
+
+  .playBoard {
+    width: min(95vw, 90vmin);
+    max-width: 100%;
+    margin: 0 auto;
+    grid-auto-rows: 1fr;
+  }
+  .cell {
+    border-width: 0.5px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .gameDetails {
+    font-size: 0.95rem;
+    padding-left: 0.6rem;
+  }
+
+  /* Overlay content sizing */
+  #gameOverlay .overlayContent {
+    width: 80%;
+    max-width: 420px;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+    #gameOverlay {
+    width: 74%; }
+
+
+  /* Inputs full width */
+  #joinID {
+    width: 100%;
+  }
+
+  /* Scoreboard list (if present) should scroll if long */
+  .scoreBoard {
+    max-height: 30vh;
+    overflow-y: auto;
+    padding-left: 0.8rem;
+  }
+}

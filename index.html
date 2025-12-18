@@ -10,6 +10,7 @@
     
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./css/snake.css">
+    <link rel="stylesheet" href="./css/media.css">
     
 
     <title>Document</title>
@@ -30,6 +31,18 @@
 
         <div class="wrapper">
             <div class="playBoard">
+            </div>
+
+            <!-- Overlay moved inside wrapper so it covers only the play area -->
+            <div id="gameOverlay">
+                <div class="overlayContent">
+                    <h2>GAME OVER</h2>
+                    <p>SCORE: <span class="finalScore"></span></p>
+                    <!-- <p>HIGHSCORE: <span class="finalHighScore"></span></p> -->
+                        <ol class="scoreBoard">
+                        </ol>
+                    <button class="btn restartBtn">RESTART GAME?</button>
+                </div>
             </div>
         </div>
 
