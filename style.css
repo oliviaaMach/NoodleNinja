@@ -9,7 +9,7 @@
     --white: #f3f3f3;
     --primary: #F5F0E6;
     --secondary: #3A2C1A;
-    --lightGrey: #D8CFC4;
+    --lightGrey: #d8cfc4;
     --snake: #E8B25C;
     --buttons: #F2D8A7;
     --hover: #E6C89C;
@@ -30,6 +30,7 @@
 
     h2 {
         color: var(--secondary);
+        font-size: 2em;
     }
 
 
@@ -42,14 +43,23 @@
 
     p {
         color: var(--primary);
+        font-size: 1.5em;
+    }
+
+    #gameOverlay p {
+        color: var(--secondary);
+        font-weight: 900;
     }
 
 
-.gameDetails p {
-    margin-right: 4em;
-    font-size: 1.4em;
-}
+    .gameDetails p {
+        margin-right: 4em;
+        font-size: 1.4em;
+    }
+
 /* TYPO END */
+
+
 body {
     display: flex;
     flex-direction: column;
@@ -67,12 +77,11 @@ body {
     grid-template-columns: 70% 30%;
     grid-template-rows: 15% 77% 8%;
     gap: 0.5em;
-    border: 2px solid black;
+    border: 2px solid var(--primary);
     border-radius: 10px;
     width: 90%;
     max-width: 1200px;
     background-color: var(--secondary);
-    /* justify-items: center; */
     justify-content: center;
 }
 
@@ -87,7 +96,6 @@ body {
     overflow: hidden;
     width: 100%;
     max-width: min(90vmin, 800px);
-    background-color: var(--);
     border: 2px solid var(--black);
     border-radius: 5px;
     box-shadow: 1px 1px 10px var(--black);
@@ -115,8 +123,6 @@ body {
     max-width: 100%;
     background-color: var(--input);
 }
-
-/* no video styles required anymore */
 
 .cell {
     border: 1px solid var(--lightGrey);
@@ -158,6 +164,7 @@ body {
     border-radius: 10px;
     padding: 10px;
     background-color: var(--primary);
+        box-shadow: inset 1px 1px 5px;
 }
 
 /* Chat */
@@ -181,6 +188,7 @@ body {
     height: 80%;
     width: 90%;
     background-color: var(--primary);
+    box-shadow: inset 1px 1px 10px;
 
 }
 
@@ -193,20 +201,34 @@ body {
     bottom: 0;
     margin-bottom: 0.5em;
     background-color: var(--primary);
+        box-shadow: inset 1px 1px 5px;
 }
 
 
 /* Overlay */
 #gameOverlay {
+    display: flex;
     position: fixed;
-    top: 0;
+    width: 50%;
+    height: 60%;
+    margin-left: 13%;
+    background-color: rgba(216, 207, 196, 0.7);
+    border: 2px solid var(--secondary);
+    /* display: none; */
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none;
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    backdrop-filter: blur(2px);
+}
+
+.overlayContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ol {
+    font-size: 1.2em;
 }
 

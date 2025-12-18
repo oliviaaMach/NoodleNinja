@@ -1,5 +1,5 @@
-import { Snake } from "/js/snake/snake.js";
-import { Food } from "/js/snake/food.js";
+import { Snake } from "../snake/snake.js";
+import { Food } from "../snake/food.js";
 import { gameLoop } from "./loop.js";
 import { resetScore, finalizeScore } from "./score.js";
 

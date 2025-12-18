@@ -10,7 +10,7 @@
     
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./css/snake.css">
-    <link rel="stylesheet" href="./css/media.css" />
+    
 
     <title>Document</title>
 </head>
@@ -18,42 +18,45 @@
 
     <h1>NOODLE NINJA</h1>
 
-<div class="container">
+    <div class="container">
 
-    <div class="controlBtns">
-        <button class="btn startBtn">START GAME</button>
-        <button class="btn pauseBtn">PAUSE GAME</button>
-        <button class="btn hostBtn">HOST GAME</button>
-        <button class="btn joinBtn">JOIN GAME</button>
-        <input type="text" id="joinID" placeholder="Enter session ID to join game">
-    </div>
-
-    <div class="wrapper">
-        <div class="playBoard">
+        <div class="controlBtns">
+            <button class="btn startBtn">START GAME</button>
+            <button class="btn pauseBtn">PAUSE GAME</button>
+            <button class="btn hostBtn">HOST GAME</button>
+            <button class="btn joinBtn">JOIN GAME</button>
+            <input type="text" id="joinID" placeholder="Enter session ID to join game">
         </div>
-    </div>
 
-    <div class="gameDetails">
-        <p>SCORE: <span class="score">0</span></p>
-        <p>HIGHSCORE: <span class="highScore">0</span></p>
-    </div>
+        <div class="wrapper">
+            <div class="playBoard">
+            </div>
+        </div>
 
-    <div class="chatContainer">
+        <div class="gameDetails">
+            <p>SCORE: <span class="score">0</span></p>
+            <p>HIGHSCORE: <span class="highScore">0</span></p>
+        </div>
+
+        <div class="chatContainer">
             <h3>CHAT</h3>
-        <div class="msg">    </div>
-        <input type="text" id="sendChat" placeholder="Type a message...">
+
+            <div class="msg">    
+            </div>
+            <input type="text" id="sendChat" placeholder="Type a message...">
+            <button class="btn send">Send</button>
 
         </div>
 
     </div>
-
-</div>
 
     <div id="gameOverlay">
         <div class="overlayContent">
             <h2>GAME OVER</h2>
             <p>SCORE: <span class="finalScore"></span></p>
-            <p>HIGHSCORE: <span class="finalHighScore"></span></p>
+            <!-- <p>HIGHSCORE: <span class="finalHighScore"></span></p> -->
+                <ol class="scoreBoard">
+                </ol>
             <button class="btn restartBtn">RESTART GAME?</button>
         </div>
     </div>
